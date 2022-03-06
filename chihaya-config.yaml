@@ -1,0 +1,30 @@
+chihaya:
+  announce_interval: 15m
+  min_announce_interval: 15m
+  metrics_addr: localhost:8080
+  http:
+    addr: localhost:6969
+    https_addr:
+    tls_cert_path:
+    tls_key_path:
+    read_timeout: 5s
+    write_timeout: 5s
+    enable_keepalive: false
+    idle_timeout: 30s
+    enable_request_timing: false
+    announce_routes:
+      - /announce
+    scrape_routes:
+      - /scrape
+    allow_ip_spoofing: true
+    real_ip_header: CF-Connecting-IP
+    max_numwant: 100
+    default_numwant: 50
+    max_scrape_infohashes: 50
+  storage:
+    name: memory
+    config:
+      gc_interval: 16m
+      peer_lifetime: 30m
+      shard_count: 1024
+      prometheus_reporting_interval: 1s
